@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock-Paper-Scissors</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        // function for computer to select its choice
+        function computerPlay() {
+            const compChoice = ['ROCK', 'PAPER', 'SCISSORS'];
+            const choiceLength = compChoice.length;
+            const choiceSelected = compChoice[Math.floor(Math.random()*choiceLength)];
+            return choiceSelected;
+        }
+        //function for single round
+        function oneRound(playerSelection, computerSelection) {
+            
+            if(playerSelection === computerSelection) {
+                return 'DRAW';
+            }
+            else if(playerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
+                return 'WON';
+            }
+            else if(playerSelection === 'PAPER' && computerSelection === 'ROCK') {
+                return 'WON';
+            }
+            else if(playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
+                return 'WON';
+            }
+            else if(playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
+                return 'LOST';
+            }
+            else if(playerSelection === 'ROCK' && computerSelection === 'PAPER') {
+                return 'LOST';
+            }
+            else if(playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
+                return 'LOST';
+            }
+            else {
+                return 'OOPS';
+            }
+        }
+        // function to loops the game 5 times and save the scores after each round
+        function game() {
+            let playerScore = 0;
+            let computerScore = 0;
+
+            for(let i = 0; i < 5; i++) {
+                let userInput = prompt(`(ROUND ${i + 1}) Enter your choice(Rock, Paper or Scissors):`,'');
+                let playerSelects = userInput.toUpperCase();
+                let computerSelects = computerPlay();
+                let rounds = oneRound(playerSelects, computerSelects);
+                if(rounds == 'DRAW'){
+                    playerScore += 0.5;
+                    computerScore += 0.5;
+                    console.log('Its a DRAW!!');
+                    console.log(`Scores: Player- ${playerScore}, Computer- ${computerScore}`);
+                }
+                else if(rounds == 'WON') {
+                    playerScore += 1;
+                    console.log(`You won! ${playerSelects} beats ${computerSelects}`);
+                    console.log(`Scores: Player- ${playerScore}, Computer- ${computerScore}`);
+                }
+                else if(rounds == 'LOST') {
+                    computerScore += 1;
+                    console.log(`You lost! ${computerSelects} beats ${playerSelects}`);
+                    console.log(`Scores: Player- ${playerScore}, Computer- ${computerScore}`);
+                }
+                else if(rounds == 'OOPS') {
+                    playerScore += 0;
+                    computerScore += 0;
+                    console.log('OOPS!! Looks like something went wrong.');
+                    console.log(`Scores: Player- ${playerScore}, Computer- ${computerScore}`);
+                }
+            }
+            // this part displays the final result after the code runs five times
+            console.log(`Final Scores: Player- ${playerScore}, Computer- ${computerScore}`);
+            if(playerScore > computerScore) {
+                return 'Congratulations!! You won.';
+            }
+            else if(playerScore < computerScore) {
+                return 'You Lost! Better luck next time.';
+            }
+            else if(playerScore == computerScore) {
+                return 'Its a DRAW!';
+            }
+            else {
+                return 'OOPS!! Looks like something went wrong.';
+            }
+        }
+        console.log(game());
+       
+    </script>
+</html>
