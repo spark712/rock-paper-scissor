@@ -1,96 +1,40 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Rock-Paper-Scissors</title>
-    </head>
-    <body>
-
-    </body>
-    <script>
-        // function for computer to select its choice
-        function computerPlay() {
-            const compChoice = ['ROCK', 'PAPER', 'SCISSORS'];
-            const choiceLength = compChoice.length;
-            const choiceSelected = compChoice[Math.floor(Math.random()*choiceLength)];
-            return choiceSelected;
-        }
-        //function for single round
-        function oneRound(playerSelection, computerSelection) {
-            
-            if(playerSelection === computerSelection) {
-                return 'DRAW';
-            }
-            else if(playerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
-                return 'WON';
-            }
-            else if(playerSelection === 'PAPER' && computerSelection === 'ROCK') {
-                return 'WON';
-            }
-            else if(playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
-                return 'WON';
-            }
-            else if(playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
-                return 'LOST';
-            }
-            else if(playerSelection === 'ROCK' && computerSelection === 'PAPER') {
-                return 'LOST';
-            }
-            else if(playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
-                return 'LOST';
-            }
-            else {
-                return 'OOPS';
-            }
-        }
-        // function to loops the game 5 times and save the scores after each round
-        function game() {
-            let playerScore = 0;
-            let computerScore = 0;
-
-            for(let i = 0; i < 5; i++) {
-                let userInput = prompt(`(ROUND ${i + 1}) Enter your choice(Rock, Paper or Scissors):`,'');
-                let playerSelects = userInput.toUpperCase();
-                let computerSelects = computerPlay();
-                let rounds = oneRound(playerSelects, computerSelects);
-                if(rounds == 'DRAW'){
-                    playerScore += 0.5;
-                    computerScore += 0.5;
-                    console.log('Its a DRAW!!');
-                    console.log(`Scores: Player- ${playerScore}, Computer- ${computerScore}`);
-                }
-                else if(rounds == 'WON') {
-                    playerScore += 1;
-                    console.log(`You won! ${playerSelects} beats ${computerSelects}`);
-                    console.log(`Scores: Player- ${playerScore}, Computer- ${computerScore}`);
-                }
-                else if(rounds == 'LOST') {
-                    computerScore += 1;
-                    console.log(`You lost! ${computerSelects} beats ${playerSelects}`);
-                    console.log(`Scores: Player- ${playerScore}, Computer- ${computerScore}`);
-                }
-                else if(rounds == 'OOPS') {
-                    playerScore += 0;
-                    computerScore += 0;
-                    console.log('OOPS!! Looks like something went wrong.');
-                    console.log(`Scores: Player- ${playerScore}, Computer- ${computerScore}`);
-                }
-            }
-            // this part displays the final result after the code runs five times
-            console.log(`Final Scores: Player- ${playerScore}, Computer- ${computerScore}`);
-            if(playerScore > computerScore) {
-                return 'Congratulations!! You won.';
-            }
-            else if(playerScore < computerScore) {
-                return 'You Lost! Better luck next time.';
-            }
-            else if(playerScore == computerScore) {
-                return 'Its a DRAW!';
-            }
-            else {
-                return 'OOPS!! Looks like something went wrong.';
-            }
-        }
-        console.log(game());
-       
-    </script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+     <link rel="stylesheet" href="rpsstyle.css">
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body >
+    <div class = 'base'>
+        <div class ='head'>
+            <h2 class = 'title'>ROCK-PAPER-SCISSORS</h2>
+            <h3 class = 'desc'>This is a simple 'Rock-Paper-Scissors' game that is played against computer.</h3>
+            <div id ='inst'>
+                <h3 id = 'h3'>INSTRUCTIONS</h3>
+                <ul>
+                    <li>Choose your hand from the following buttons</li>
+                    <li>The result will be shown below the buttons for each round</li>
+                    <li>Whoever scores 5 points first wins the game</li>
+                <ul>
+            </div>    
+            <h3>HAVE FUN 👍🏼</h3>
+        </div>  
+        <div class = 'buttons'>
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissors">Scissors</button>
+        </div>
+        <div class = 'container'>
+            <ul class = 'ul' id='textContainer'></ul>
+            <div id = 'scoreContainer'></div>
+        </div>
+        <div class = 'buttons'>
+            <a href=''><button class = 'reset'>RESET</button></a>
+        <div>
+    </div>
+</body>
+<script type="text/javascript" src="rps.js"></script>
 </html>

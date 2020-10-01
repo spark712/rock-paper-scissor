@@ -1,0 +1,148 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title {
+    font-size: 50px;
+    padding-top: 20px;
+    margin-bottom: 0px;
+}
+
+html {
+    /*background from - https://thewallpaper.co/*/
+    background: url(background/rps-background.JPG);
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    position: static;
+    background-attachment: fixed, scroll, fixed;
+}
+
+.base {
+    background: rgba(27, 27, 50, 0.9);
+    margin: 0 auto;
+    width: auto;
+    max-width: 800px;
+    height: auto;
+    border-radius: 5px;
+    color: black;
+    padding-bottom: 25px;
+}
+
+.head {
+    color: white;
+    text-align: center;
+}
+
+#inst {
+    margin: 0 auto;
+    background: rgba(228, 5, 131, 0.7);
+    width: auto;
+    max-width: 600px;
+    height: auto;
+    border-radius: 5px;
+    color: white;
+    text-align: left;
+    padding-bottom: 8px;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.rock,
+.paper,
+.scissors,
+.reset {
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    padding: 10px 50px;
+    font-size: 15px;
+    margin: 10px 0px 50px 0px;
+    transition-duration: 0.5s;
+    width: 145px
+}
+
+.reset {
+    color: red;
+    border: 2px solid red;
+    background: white;
+}
+
+.reset:hover {
+    color: white;
+    background: red;
+}
+
+.rock {
+    color: rgb(117, 115, 115);
+    border: 2px solid rgb(117, 115, 115);
+    background: white;
+}
+
+.rock:hover {
+    color: white;
+    background: rgb(117, 115, 115);
+}
+
+.paper {
+    color: rgb(19, 181, 209);
+    border: 2px solid rgb(19, 181, 209);
+    background: white;
+}
+
+.paper:hover {
+    color: white;
+    background: rgb(19, 181, 209);
+}
+
+.scissors {
+    color: rgb(42, 202, 109);
+    border: 2px solid rgb(42, 202, 109);
+    background: white;
+    padding-left: 41px;
+}
+
+.scissors:hover {
+    color: white;
+    background: rgb(42, 202, 109);
+}
+
+.rock:focus,
+.paper:focus,
+.scissors:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+div .ul {
+    border-radius: 5px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: auto;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.desc {
+    margin: 10px auto 50px auto;
+}
+
+#h3 {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#scoreContainer {
+    color: white;
+    text-align: center;
+}
+
+#textContainer li {
+    margin: 10px auto;
+}
